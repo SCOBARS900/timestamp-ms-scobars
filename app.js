@@ -4,7 +4,29 @@ var cors = require('cors');
 
 var app = express();
 
+app.use(bodyParser.json());
+app.use(cors());
 
+app.get('/:dateS', function(req, res) {
+    
+    var dateL = req.params.dateS;
+    var isNumber = /^\d+$/;
+    
+    if(isNumber.test(dateL)) {
+        var monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var dateN = new Date(dateL * 1000);
+        var dateNDay = dateN.getDate();
+        var dateNMonth = dateN.getMonth();
+        var dateNYear = dateN.getFullYear();
+        var naturalDate = monthsArray[dateNMonth] + " " + dateNDay + "," + dateNYear;
+        
+        res.json({ "unix": dateL, "natural": naturalDate})
+    } 
+
+    
+    
+    
+});
 
 
 
