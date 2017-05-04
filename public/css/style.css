@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    font-family: monospace;
+    background-image: url(../img/bk3.jpg);
+    color: white;
+}
+
+
+h1 {
+    font-size: 40px;
+    color: orange;
+}
+
+ul {
+    font-size: 20px;
+}
+
+h3 {
+    color: orange;
+}
+
+
+#imputDate {
+    color: black;
+}
+
+
+

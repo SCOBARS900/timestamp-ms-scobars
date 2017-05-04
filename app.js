@@ -7,6 +7,8 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(express.static('public'));
+
 app.get('/:dateS', function(req, res) {
     
     var dateL = req.params.dateS;
