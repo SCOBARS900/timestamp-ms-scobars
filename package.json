@@ -1,0 +1,19 @@
+{
+  "name": "timestamp_scobars",
+  "version": "1.0.0",
+  "description": "Free Code Camp exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SCOBARS900/timestamp-ms-scobars.git"
+  },
+  "author": "Julio Escobar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SCOBARS900/timestamp-ms-scobars/issues"
+  },
+  "homepage": "https://github.com/SCOBARS900/timestamp-ms-scobars#readme"
+}
