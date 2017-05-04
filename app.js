@@ -12,16 +12,30 @@ app.get('/:dateS', function(req, res) {
     var dateL = req.params.dateS;
     var isNumber = /^\d+$/;
     
+    var monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
     if(isNumber.test(dateL)) {
-        var monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        
         var dateN = new Date(dateL * 1000);
         var dateNDay = dateN.getDate();
         var dateNMonth = dateN.getMonth();
         var dateNYear = dateN.getFullYear();
-        var naturalDate = monthsArray[dateNMonth] + " " + dateNDay + "," + dateNYear;
+        var naturalDateN = monthsArray[dateNMonth] + " " + dateNDay + "," + dateNYear;
         
-        res.json({ "unix": dateL, "natural": naturalDate})
-    } 
+        res.json({ "unix": dateL, "natural": naturalDateN})
+    } else if ((new Date(dateL)).getTime() > 0) {
+        var dateU = new Date(dateL);
+        var dateUDay = dateU.getDate();
+        var dateUMonth = dateU.getMonth();
+        var dateUYear = dateU.getFullYear();
+        var naturalDateU = monthsArray[dateUMonth] + " " + dateUDay + "," + dateUYear;
+        
+        var unixDate = dateU.getTime() / 1000;
+        
+        res.json({ "unix": unixDate, "natural": naturalDateU})
+    } else {
+        res.json({ "unix": null, "natural": null})
+    }
 
     
     
