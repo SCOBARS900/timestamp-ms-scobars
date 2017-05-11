@@ -1,14 +1,14 @@
 body {
     text-align: center;
     font-family: monospace;
-    background-image: url(../img/bk3.jpg);
     color: white;
+    background-color: grey;
 }
 
 
 h1 {
     font-size: 40px;
-    color: orange;
+    color: greenyellow;
 }
 
 ul {
@@ -16,12 +16,30 @@ ul {
 }
 
 h3 {
-    color: orange;
+    color: greenyellow;
+}
+
+code {
+    background-color: azure;
+    color: black;
+    font-size: 14px;
 }
 
 
 #imputDate {
+    margin-left: 20px;
+    width: 260px;
+    padding-left: 10px;
+    border-radius: 40px;
+    height: 30px;
     color: black;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: greenyellow;
+    border-radius: 10px;
+    
 }
 
 
