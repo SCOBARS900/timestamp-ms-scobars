@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
     <head>
         <title>Timestamp microservice</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -19,8 +20,8 @@
             </blockquote>
             
             <section id="imputDate">
-            <input placeholder="Insert Date">
-            <a class="btn btn-success">Go</a>  
+            <input placeholder="Insert Date" ng-model="timeP">
+            <a class="btn btn-success" href="localhost:3000/{{timeP}}">Go</a>  
             </section>
             
             
