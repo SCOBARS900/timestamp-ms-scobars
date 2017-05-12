@@ -1,15 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var useragent = require('express-useragent');
 
 var app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(useragent.express());
 
 app.use(express.static('public'));
 
-app.get('/:dateS', function(req, res) {
+app.get('/timestamp/:dateS', function(req, res) {
     
     var dateL = req.params.dateS;
     var isNumber = /^\d+$/;
@@ -37,10 +39,25 @@ app.get('/:dateS', function(req, res) {
         res.json({ "unix": unixDate, "natural": naturalDateU})
     } else {
         res.json({ "unix": null, "natural": null})
-    }
+    }  
+});
 
+app.get('/requestheader', function(req, res) {
+    var ipU = req.ip;
+    var languageU = req.acceptsLanguages()[0];
+    var softwareU = req.useragent.os;
+    
+    var checkacpt = req.acceptsLanguages;
+    var softz = req.useragent;
     
     
+    if (ipU.substr(0, 7) == "::ffff:") {
+    ipU = ipU.substr(7)
+    }
+    
+    console.log(checkacpt, softz);
+    
+    res.json({ipadress: ipU, language: languageU, software: softwareU});
     
 });
 
