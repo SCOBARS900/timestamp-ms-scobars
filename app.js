@@ -47,15 +47,11 @@ app.get('/requestheader', function(req, res) {
     var languageU = req.acceptsLanguages()[0];
     var softwareU = req.useragent.os;
     
-    var checkacpt = req.acceptsLanguages;
-    var softz = req.useragent;
-    
-    
     if (ipU.substr(0, 7) == "::ffff:") {
     ipU = ipU.substr(7)
     }
     
-    console.log(checkacpt, softz);
+    console.log(softz);
     
     res.json({ipadress: ipU, language: languageU, software: softwareU});
     
