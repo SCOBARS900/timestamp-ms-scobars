@@ -51,7 +51,6 @@ app.get('/requestheader', function(req, res) {
     ipU = ipU.substr(7)
     }
     
-    console.log(softz);
     
     res.json({ipadress: ipU, language: languageU, software: softwareU});
     
